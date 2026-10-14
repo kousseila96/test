@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>نور — حجابات وخُمُر</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbf6f9;--surface:#fff;--ink:#2b1b33;--soft:#6e5c76;--rose:#c0587b;--gold:#b98e2f;--line:#eadbe4;--shadow:rgba(60,20,70,.14);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1b1021;--surface:#27172f;--ink:#f6e9f1;--soft:#b9a4c0;--rose:#e58aa9;--gold:#e0b657;--line:#3b2745;--shadow:rgba(0,0,0,.5)}}
+:root[data-theme="dark"]{--bg:#1b1021;--surface:#27172f;--ink:#f6e9f1;--soft:#b9a4c0;--rose:#e58aa9;--gold:#e0b657;--line:#3b2745;--shadow:rgba(0,0,0,.5)}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Cairo,system-ui,sans-serif;font-weight:300;line-height:1.7}
+h1,h2,h3{font-family:Amiri,Georgia,serif;font-weight:700;line-height:1.35;margin:0}
+a{color:inherit}
+button{font:inherit;cursor:pointer;color:inherit}
+:focus-visible{outline:2px solid var(--rose);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:Amiri,serif;font-weight:700;font-size:32px;text-decoration:none}
+.logo i{color:var(--rose)}
+nav{display:flex;gap:28px}
+nav a{text-decoration:none;font-size:15px;color:var(--soft)}
+nav a:hover{color:var(--ink)}
+.cartbtn{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:8px 18px;display:flex;gap:10px;align-items:center}
+.cartbtn b{background:var(--rose);color:#fff;border-radius:99px;min-width:22px;height:22px;display:grid;place-items:center;font-size:12px;font-weight:500}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:56px 0 72px}
+.hero h1{font-size:clamp(38px,5.4vw,68px)}
+.hero h1 em{color:var(--rose)}
+.hero p{font-size:18px;color:var(--soft);max-width:440px;margin:22px 0 32px}
+.btn{display:inline-block;background:var(--ink);color:var(--bg);border:0;border-radius:999px;padding:15px 32px;text-decoration:none;font-weight:400;transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px var(--shadow)}
+.btn.ghost{background:none;color:var(--ink);border:1px solid var(--ink);margin-right:10px}
+.arch{position:relative;aspect-ratio:3/4;border-radius:999px 999px 24px 24px;overflow:hidden;box-shadow:0 40px 80px var(--shadow);background:linear-gradient(180deg,#f4d6e2,#d9b3e6)}
+.arch svg{position:absolute;inset:0;width:100%;height:100%}
+.sheen{position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.55) 50%,transparent 65%);transform:translateX(-120%);animation:sheen 6s ease-in-out 1s infinite}
+@keyframes sheen{to{transform:translateX(120%)}}
+.float{position:absolute;width:92px;height:92px;border-radius:50%;box-shadow:0 14px 30px var(--shadow);transition:transform .2s}
+.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;border-block:1px solid var(--line);padding:26px 0;text-align:center}
+.trust b{display:block;font-weight:500}
+.trust span{color:var(--soft);font-size:14px}
+section{padding:84px 0 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:36px}
+.head h2{font-size:clamp(32px,4vw,48px)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:99px;padding:8px 18px;font-size:14px;transition:background .2s}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.card{display:flex;flex-direction:column}
+.pic{position:relative;aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:var(--surface)}
+.pic svg{width:100%;height:100%;display:block;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.card:hover .pic svg{transform:scale(1.07)}
+.sway{transform-origin:50% 0;animation:sway 5s ease-in-out infinite alternate}
+.sway.b{animation-delay:-2s;animation-duration:6.5s}
+@keyframes sway{from{transform:skewX(-1.2deg)}to{transform:skewX(1.2deg)}}
+.tag{position:absolute;top:12px;right:12px;background:var(--surface);color:var(--ink);font-size:12px;border-radius:99px;padding:3px 12px}
+.add{position:absolute;left:12px;right:12px;bottom:12px;background:var(--ink);color:var(--bg);border:0;border-radius:99px;padding:11px;transform:translateY(160%);transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.card:hover .add,.add:focus-visible{transform:none}
+@media (hover:none){.add{transform:none}}
+.info{padding:14px 2px 0}
+.info h3{font-size:19px}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+.price{font-weight:500}
+.dots{display:flex;gap:7px}
+.dot{width:20px;height:20px;border-radius:50%;border:2px solid var(--surface);box-shadow:0 0 0 1px var(--line);padding:0}
+.dot[aria-pressed=true]{box-shadow:0 0 0 2px var(--rose)}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.story .art{aspect-ratio:1;border-radius:50%;overflow:hidden;box-shadow:0 30px 70px var(--shadow)}
+.story h2{font-size:clamp(32px,4vw,48px);margin-bottom:18px}
+.story p{color:var(--soft);font-size:17px;max-width:480px}
+footer{margin-top:96px;background:var(--ink);color:var(--bg);padding:56px 0 40px}
+footer .wrap{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap}
+footer p{opacity:.7;margin:6px 0 0;max-width:340px}
+footer a{display:block;opacity:.85;text-decoration:none;margin-bottom:6px}
+.veil{position:fixed;inset:0;background:rgba(20,8,26,.5);opacity:0;pointer-events:none;transition:opacity .3s;z-index:30}
+.veil.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;left:0;bottom:0;width:min(420px,100%);background:var(--bg);z-index:40;transform:translateX(-100%);transition:transform .45s cubic-bezier(.2,.7,.2,1);display:flex;flex-direction:column;padding:calc(20px + env(safe-area-inset-top,0px)) 22px calc(20px + env(safe-area-inset-bottom,0px))}
+.drawer.on{transform:none}
+.drawer h2{font-size:28px;display:flex;justify-content:space-between;align-items:center}
+.x{border:0;background:none;font-size:28px;line-height:1}
+.items{flex:1;overflow:auto;margin:18px 0}
+.it{display:grid;grid-template-columns:56px 1fr auto;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.it svg{width:56px;height:70px;border-radius:10px}
+.it small{color:var(--soft)}
+.qty{display:flex;gap:8px;align-items:center;margin-top:4px}
+.qty button{width:26px;height:26px;border-radius:50%;border:1px solid var(--line);background:var(--surface)}
+.empty{color:var(--soft);text-align:center;padding:48px 0}
+.drawer input,.drawer select{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;margin-bottom:10px}
+.total{display:flex;justify-content:space-between;font-size:20px;margin:6px 0 14px}
+.wa{width:100%;background:#1f9d55;color:#fff;border:0;border-radius:999px;padding:15px;font-weight:500}
+.wa:disabled{opacity:.45;cursor:not-allowed}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,200%);background:var(--ink);color:var(--bg);padding:12px 22px;border-radius:99px;z-index:50;transition:transform .4s}
+.toast.on{transform:translate(-50%,0)}
+@media (max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}.hero,.story{grid-template-columns:1fr}.arch{max-width:420px;margin:0 auto}nav{display:none}}
+@media (max-width:520px){.wrap{padding:0 16px}.grid{gap:14px}.trust{grid-template-columns:1fr}.btn.ghost{margin:10px 0 0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap bar">
+<a class="logo" href="#top">نور<i>.</i></a>
+<nav><a href="#boutique">المتجر</a><a href="#histoire">قصتنا</a><a href="#contact">اتصلي بنا</a></nav>
+<button class="cartbtn" id="open" aria-label="فتح السلة">السلة <b id="count">0</b></button>
+</div></header>
+
+<main id="top" class="wrap">
+<div class="hero">
+<div>
+<h1>حجابات تنساب <em>كالنور</em></h1>
+<p>حجابات وخُمُر من الحرير والموسلين والجيرسي، مختارة لنعومة القماش وثباتها طوال اليوم. نوصلها إلى كامل ولايات الجزائر.</p>
+<a class="btn" href="#boutique">تصفّحي المجموعة</a><a class="btn ghost" href="#histoire">قصتنا</a>
+</div>
+<div class="arch" id="arch">
+<svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs>
+<linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e9a6c0"/><stop offset="1" stop-color="#8b5bb0"/></linearGradient>
+<linearGradient id="g2" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7d9a6"/><stop offset="1" stop-color="#d4709a"/></linearGradient>
+<linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6a3f8f"/><stop offset="1" stop-color="#2b1b33"/></linearGradient>
+</defs>
+<rect width="300" height="400" fill="#f4d6e2"/>
+<path fill="url(#g2)" opacity=".9"><animate attributeName="d" dur="9s" repeatCount="indefinite" values="M0 120 C70 60 140 190 300 90 L300 400 L0 400Z;M0 90 C90 170 170 50 300 130 L300 400 L0 400Z;M0 120 C70 60 140 190 300 90 L300 400 L0 400Z"/></path>
+<path fill="url(#g1)" opacity=".92"><animate attributeName="d" dur="11s" repeatCount="indefinite" values="M0 200 C80 140 150 270 300 180 L300 400 L0 400Z;M0 180 C100 260 190 130 300 220 L300 400 L0 400Z;M0 200 C80 140 150 270 300 180 L300 400 L0 400Z"/></path>
+<path fill="url(#g3)" opacity=".95"><animate attributeName="d" dur="13s" repeatCount="indefinite" values="M0 290 C90 240 170 340 300 270 L300 400 L0 400Z;M0 270 C110 340 200 230 300 310 L300 400 L0 400Z;M0 290 C90 240 170 340 300 270 L300 400 L0 400Z"/></path>
+</svg>
+<div class="sheen"></div>
+<span class="float" data-d="14" style="top:14%;right:-14px;background:radial-gradient(circle at 30% 30%,#fff3,#c0587b)"></span>
+<span class="float" data-d="-10" style="bottom:12%;left:-18px;width:70px;height:70px;background:radial-gradient(circle at 30% 30%,#fff4,#8fa68e)"></span>
+</div>
+</div>
+
+<div class="trust">
+<div><b>التوصيل إلى 58 ولاية</b><span>مع متابعة هاتفية</span></div>
+<div><b>الدفع عند الاستلام</b><span>تدفعين عند استلام طلبك</span></div>
+<div><b>استبدال خلال 7 أيام</b><span>إذا لم يناسبك المقاس أو اللون</span></div>
+</div>
+
+<section id="boutique">
+<div class="head"><h2>المجموعة</h2>
+<div class="chips" id="chips">
+<button class="chip" aria-pressed="true" data-c="all">الكل</button>
+<button class="chip" aria-pressed="false" data-c="Khimar">الخُمُر</button>
+<button class="chip" aria-pressed="false" data-c="Hijab">الحجابات</button>
+<button class="chip" aria-pressed="false" data-c="Châle">الأوشحة</button>
+</div></div>
+<div class="grid" id="grid"></div>
+</section>
+
+<section id="histoire"><div class="story">
+<div class="art"><svg viewBox="0 0 300 300" id="storyart" style="width:100%;height:100%"></svg></div>
+<div><h2>الحجاب يُختار باللمس</h2>
+<p>في نور، نلمس كل قماش ونشدّه ونجرّبه قبل أن يدخل المتجر. نحتفظ فقط بما يبقى ناعماً بعد يوم طويل، ولا ينزلق، ولا يبهت لونه مع الغسيل.</p>
+<p>وعدنا بسيط: تشكيلة مختصرة، وأسعار واضحة بالدينار، وتوصيل يصل فعلاً.</p></div>
+</div></section>
+</main>
+
+<footer id="contact"><div class="wrap">
+<div><div class="logo">نور.</div><p>حجابات وخُمُر نسائية، نوصلها إلى كامل ولايات الجزائر.</p></div>
+<div><a href="#" onclick="return false">Instagram</a><a href="#" onclick="return false">TikTok</a><a href="#" onclick="return false">Facebook</a></div>
+<div><a href="#boutique">المتجر</a><a href="#histoire">قصتنا</a><a id="wl" href="#">واتساب</a></div>
+</div></footer>
+
+<div class="veil" id="veil"></div>
+<aside class="drawer" id="drawer" aria-label="السلة">
+<h2>سلتك <button class="x" id="close" aria-label="إغلاق">×</button></h2>
+<div class="items" id="items"></div>
+<input id="nm" placeholder="الاسم الكامل" autocomplete="name">
+<input id="ph" placeholder="رقم الهاتف" inputmode="tel" autocomplete="tel">
+<select id="wi"><option value="">ولاية التوصيل</option></select>
+<div class="total"><span>المجموع</span><b id="tot">0 DA</b></div>
+<button class="wa" id="send" disabled>اطلبي عبر واتساب</button>
+</aside>
+<div class="toast" id="toast"></div>
+
+<script>
+const WA="213000000000"; // remplacez par votre numéro WhatsApp (format international sans +)
+const P=[
+{id:1,n:"خمار حرير المدينة",t:"Khimar",p:4800,c:["#c0587b","#6a3f8f","#2b4a3f","#d8b36a"],b:"Nouveau"},
+{id:2,n:"حجاب موسلين خفيف",t:"Hijab",p:1900,c:["#e9b5c6","#8fa68e","#b8a1d9","#f1e3cf"]},
+{id:3,n:"خمار كريب بطبقتين",t:"Khimar",p:3900,c:["#1f1b2d","#7a3b4f","#3d5a80","#a78b71"],b:"Best-seller"},
+{id:4,n:"حجاب جيرسي فاخر",t:"Hijab",p:1500,c:["#2b1b33","#a8556f","#6f8f87","#d2c1b0"]},
+{id:5,n:"وشاح ساتان لامع",t:"Châle",p:2600,c:["#d4709a","#c9a24b","#5b4b8a","#e8d5df"]},
+{id:6,n:"خمار طويل بقبعة",t:"Khimar",p:4200,c:["#4a2c5a","#2f4f4f","#b4637a","#c8b9a6"]},
+{id:7,n:"وشاح قطن لون",t:"Châle",p:2100,c:["#f0c9d6","#a9c3b0","#cdb6e3","#f3ead9"],b:"Nouveau"},
+{id:8,n:"حجاب حرير مطفي",t:"Hijab",p:3200,c:["#8d3c5c","#3a2b52","#8a9a6b","#e0b58f"]}
+];
+const W=["أدرار","الشلف","الأغواط","أم البواقي","باتنة","بجاية","بسكرة","بشار","البليدة","البويرة","تمنراست","تبسة","تلمسان","تيارت","تيزي وزو","الجزائر","الجلفة","جيجل","سطيف","سعيدة","سكيكدة","سيدي بلعباس","عنابة","قالمة","قسنطينة","المدية","مستغانم","المسيلة","معسكر","ورقلة","وهران","البيض","إليزي","برج بوعريريج","بومرداس","الطارف","تندوف","تيسمسيلت","الوادي","خنشلة","سوق أهراس","تيبازة","ميلة","عين الدفلى","النعامة","عين تموشنت","غرداية","غليزان","تيميمون","برج باجي مختار","أولاد جلال","بني عباس","عين صالح","عين قزام","تقرت","جانت","المغير","المنيعة"];
+const $=s=>document.querySelector(s);
+const rgb=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
+const mix=(h,t,a)=>"#"+rgb(h).map((v,i)=>Math.round(v+(t[i]-v)*a).toString(16).padStart(2,"0")).join("");
+const lt=(h,a)=>mix(h,[255,255,255],a), dk=(h,a)=>mix(h,[20,8,26],a);
+const fmt=n=>n.toLocaleString("fr-FR").replace(/\u202f/g," ")+" دج";
+let u=0;
+function art(c,v){const k="a"+(u++);return `<svg viewBox="0 0 300 380" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs>
+<linearGradient id="${k}b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${lt(c,.85)}"/><stop offset="1" stop-color="${lt(c,.55)}"/></linearGradient>
+<linearGradient id="${k}f" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${lt(c,.18)}"/><stop offset=".55" stop-color="${c}"/><stop offset="1" stop-color="${dk(c,.4)}"/></linearGradient>
+<radialGradient id="${k}s" cx=".5" cy=".4"><stop offset="0" stop-color="#f3dccb"/><stop offset="1" stop-color="#e0bfa8"/></radialGradient></defs>
+<rect width="300" height="380" fill="url(#${k}b)"/><circle cx="240" cy="70" r="46" fill="${lt(c,.7)}" opacity=".55"/>
+<path d="M150 34C92 34 66 92 70 152C74 214 40 262 14 380L286 380C260 262 226 214 230 152C234 92 208 34 150 34Z" fill="url(#${k}f)"/>
+<ellipse cx="150" cy="142" rx="43" ry="58" fill="url(#${k}s)"/>
+<path d="M150 34C100 36 80 88 82 148C84 110 110 62 150 60C190 62 216 110 218 148C220 88 200 36 150 34Z" fill="${dk(c,.25)}" opacity=".55"/>
+<g fill="none" stroke-linecap="round"><g class="sway"><path d="M104 200C98 260 84 320 60 380" stroke="${lt(c,.4)}" stroke-width="5" opacity=".55"/><path d="M130 214C126 270 116 330 104 380" stroke="${dk(c,.3)}" stroke-width="7" opacity=".4"/></g>
+<g class="sway b"><path d="M196 204C204 262 216 322 242 380" stroke="${lt(c,.4)}" stroke-width="5" opacity=".5"/><path d="M172 216C176 270 188 330 198 380" stroke="${dk(c,.3)}" stroke-width="7" opacity=".4"/></g></g></svg>`}
+let cart=[],filter="all",sel={};
+function grid(){const g=$("#grid");g.innerHTML="";P.filter(p=>filter=="all"||p.t==filter).forEach(p=>{
+const ci=sel[p.id]??0,c=p.c[ci],el=document.createElement("article");el.className="card";
+el.innerHTML=`<div class="pic">${art(c)}${p.b?`<span class="tag">${{"Nouveau":"جديد","Best-seller":"الأكثر مبيعاً"}[p.b]}</span>`:""}<button class="add">أضيفي إلى السلة</button></div>
+<div class="info"><h3>${p.n}</h3><div class="row"><span class="price">${fmt(p.p)}</span><div class="dots">${p.c.map((x,i)=>`<button class="dot" style="background:${x}" aria-label="اللون ${i+1}" aria-pressed="${i==ci}" data-i="${i}"></button>`).join("")}</div></div></div>`;
+el.querySelectorAll(".dot").forEach(d=>d.onclick=()=>{sel[p.id]=+d.dataset.i;el.querySelector(".pic svg").outerHTML=art(p.c[sel[p.id]]);el.querySelectorAll(".dot").forEach(x=>x.setAttribute("aria-pressed",x==d))});
+el.querySelector(".add").onclick=()=>add(p,sel[p.id]??0);g.append(el)})}
+function add(p,i){const k=p.id+"-"+i,f=cart.find(x=>x.k==k);f?f.q++:cart.push({k,p,c:p.c[i],q:1});draw();toast("تمت الإضافة إلى السلة")}
+function draw(){const n=cart.reduce((a,x)=>a+x.q,0),t=cart.reduce((a,x)=>a+x.q*x.p.p,0);
+$("#count").textContent=n;$("#tot").textContent=fmt(t);
+$("#items").innerHTML=cart.length?"":'<div class="empty">سلتك فارغة.<br>اختاري حجاباً من المجموعة.</div>';
+cart.forEach(x=>{const d=document.createElement("div");d.className="it";
+d.innerHTML=`${art(x.c)}<div><b>${x.p.n}</b><br><small>${fmt(x.p.p)}</small><div class="qty"><button aria-label="أقل">−</button>${x.q}<button aria-label="أكثر">+</button></div></div><b>${fmt(x.p.p*x.q)}</b>`;
+const [m,pl]=d.querySelectorAll(".qty button");m.onclick=()=>{x.q--;if(!x.q)cart=cart.filter(y=>y!=x);draw()};pl.onclick=()=>{x.q++;draw()};$("#items").append(d)});
+check()}
+function check(){$("#send").disabled=!(cart.length&&$("#nm").value.trim()&&$("#ph").value.trim()&&$("#wi").value)}
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove("on"),1600)}
+const dr=o=>{$("#drawer").classList.toggle("on",o);$("#veil").classList.toggle("on",o)};
+$("#open").onclick=()=>dr(true);$("#close").onclick=$("#veil").onclick=()=>dr(false);
+$("#chips").onclick=e=>{const b=e.target.closest(".chip");if(!b)return;filter=b.dataset.c;document.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed",x==b));grid()};
+W.forEach((w,i)=>$("#wi").insertAdjacentHTML("beforeend",`<option>${String(i+1).padStart(2,"0")} - ${w}</option>`));
+["#nm","#ph","#wi"].forEach(s=>$(s).addEventListener("input",check));
+$("#send").onclick=()=>{const l=cart.map(x=>`- ${x.p.n} (${x.c}) x${x.q} : ${fmt(x.p.p*x.q)}`).join("\n");
+const t=cart.reduce((a,x)=>a+x.q*x.p.p,0);
+const m=`مرحباً، أرغب في الطلب:\n${l}\nالمجموع: ${fmt(t)} (الدفع عند الاستلام)\nالاسم: ${$("#nm").value}\nالهاتف: ${$("#ph").value}\nالولاية: ${$("#wi").value}`;
+window.open(`https://wa.me/${WA}?text=${encodeURIComponent(m)}`,"_blank")};
+$("#wl").href=`https://wa.me/${WA}`;
+$("#storyart").innerHTML=art("#c0587b").replace(/^<svg[^>]*>/,"").replace(/<\/svg>$/,"");
+$("#storyart").setAttribute("viewBox","0 20 300 300");
+const A=$("#arch");A.addEventListener("pointermove",e=>{const r=A.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;A.querySelectorAll(".float").forEach(f=>f.style.transform=`translate(${x*+f.dataset.d*3}px,${y*+f.dataset.d*3}px)`)});
+grid();draw();
+</script>
+</body>
+</html>
